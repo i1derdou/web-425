@@ -27,16 +27,19 @@ import { RouterLink, RouterOutlet } from '@angular/router';
                 <a routerLink="/">Home</a>
               </li>
               <li class="plain-link">
-                <a href="#">Build</a>
+                <a routerLink="player">Player</a>
               </li>
               <li class="plain-link">
-                <a href="#">Gallery</a>
+                <a routerLink="create-character">Create Character</a>
               </li>
               <li class="plain-link">
-                <a href="#">Store</a>
+                <a routerLink="create-guild">Create Guild</a>
               </li>
               <li class="plain-link">
-                <a href="#">Contact</a>
+                <a routerLink="character-faction">Faction</a>
+              </li>
+              <li class="plain-link">
+                <a routerLink="signin">Sign-In</a>
               </li>
             </ul>
           </div>
@@ -68,16 +71,19 @@ import { RouterLink, RouterOutlet } from '@angular/router';
                 <a routerLink="/">Home</a>
               </li>
               <li>
-                <a href="#">Build</a>
+                <a routerLink="player">Player</a>
               </li>
               <li>
-                <a href="#">Gallery</a>
+                <a routerLink="create-character">Create Character</a>
               </li>
               <li>
-                <a href="#">Store</a>
+                <a routerLink="create-guild">Create Guild</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a routerLink="character-faction">Faction</a>
+              </li>
+              <li>
+                <a routerLink="signin">Sign-In</a>
               </li>
             </ul>
           </nav>

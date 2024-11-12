@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { PlayerComponent } from './player/player.component';
+import { PlayersComponent } from './players/players.component';
 import { SigninComponent } from './signin/signin.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
 import { CreateGuildComponent } from './create-guild/create-guild.component';
@@ -15,8 +15,8 @@ export const routes: Routes = [
   component: HomeComponent
   },
   {
-    path: 'player',
-    component: PlayerComponent
+    path: 'players',
+    component: PlayersComponent
   },
   {
     path: 'signin',

@@ -1,0 +1,17 @@
+.players-container {
+  padding: 20px;
+  text-align: center;
+}
+.players-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.character-card {
+  width: 30%;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}

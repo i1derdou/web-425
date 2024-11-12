@@ -1,0 +1,13 @@
+<div class="players-container">
+  <h2>Players List</h2>
+  <div class="players-grid">
+      <div *ngFor="let character of characters" class="character-card">
+          <h3>{{ character.name }}</h3>
+          <p><strong>Gender:</strong> {{ character.gender }}</p>
+          <p><strong>Class:</strong> {{ character.class }}</p>
+          <p><strong>Faction:</strong> {{ character.faction }}</p>
+          <p><strong>Starting Location:</strong> {{ character.startingLocation }}</p>
+          <p><strong>Fun Fact:</strong> {{ character.funFact }}</p>
+      </div>
+  </div>
+</div>

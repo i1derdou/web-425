@@ -27,7 +27,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
                 <a routerLink="/">Home</a>
               </li>
               <li class="plain-link">
-                <a routerLink="player">Player</a>
+                <a routerLink="/players">Players</a>
               </li>
               <li class="plain-link">
                 <a routerLink="create-character">Create Character</a>
@@ -71,7 +71,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
                 <a routerLink="/">Home</a>
               </li>
               <li>
-                <a routerLink="player">Player</a>
+                <a routerLink="players">Players</a>
               </li>
               <li>
                 <a routerLink="create-character">Create Character</a>
@@ -119,4 +119,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
  ]
 })
 export class AppComponent {
+  title = 'rpg-character-builder';
 }

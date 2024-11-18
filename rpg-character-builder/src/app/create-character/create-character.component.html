@@ -1,0 +1,75 @@
+<div class="row pattern">
+  <section class="contact" id="contact">
+      <div class="container">
+          <div class="row">
+              <h2>Create a Character</h2>
+              <p class="section-description">
+              </p>
+          </div>
+          <div class="row">
+              <div class="col-md-6 col-lg-4">
+                  <form (ngSubmit)="addCharacter()" class="contact-form">
+                      <div class="row">
+                          <div class="col-sm-4 label-container">
+                              <label for="name">Character Name: </label>
+                          </div>
+                          <div class="col-sm-8">
+                            <input id="name" [(ngModel)]="name" name="name" required />
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-4 label-container">
+                              <label for="email">Gender: </label>
+                          </div>
+                          <div class="col-sm-8">
+                            <select id="gender" [(ngModel)]="gender" name="gender" required>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-4 label-container">
+                              <label>Class: </label>
+                          </div>
+                          <div class="col-sm-8">
+                            <select id="class" [(ngModel)]="class" name="class" required>
+                              <option value="Warrior">Warrior</option>
+                              <option value="Mage">Mage</option>
+                              <option value="Rogue">Rogue</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-12">
+                              <button type="submit" class="btn">Create Character</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-md-6 col-lg-7 character-align">
+                <table style="position: relative; top: 0px; margin-top: -50px;">
+                  <tr>
+                    <td colspan="4" style="text-align: left;">
+                      <h3>Character List</h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="w-10">ID</th>
+                    <th class="w-20">Name</th>
+                    <th class="w-20">Gender</th>
+                    <th class="w-20">Class</th>
+                  </tr>
+                  <tr *ngFor="let character of characters">
+                    <td class="p-10 w-10">{{ character.id }}</td>
+                    <td class="p-10 w-20">{{ character.name }}</td>
+                    <td class="p-10 w-20">{{ character.gender }}</td>
+                    <td class="p-10 w-20">{{ character.class }}</td>
+                  </tr>
+                </table>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>

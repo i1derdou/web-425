@@ -1,0 +1,12 @@
+<div class="col-md-12 col-lg-12">
+  <h3>Created Guilds</h3>
+  <ul *ngIf="guilds.length > 0">
+    <li *ngFor="let guild of guilds">
+      <strong>{{ guild.guildName }}</strong>: {{ guild.description }} ({{ guild.type }}) - Notification via {{ guild.notificationPreference }}
+    </li>
+  </ul>
+  <div *ngIf="guilds.length === 0" class="empty-message">
+    No guilds available.
+  </div>
+</div>
+

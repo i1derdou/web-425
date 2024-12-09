@@ -1,0 +1,24 @@
+<div class="col-md-6 col-lg-7 character-align">
+  <table style="position: relative; top: 0px; margin-top: -50px;" *ngIf="characters.length > 0">
+    <tr>
+      <td colspan="4" style="text-align: left;">
+        <h3>Character List</h3>
+      </td>
+    </tr>
+    <tr>
+      <th class="w-10">ID</th>
+      <th class="w-20">Name</th>
+      <th class="w-20">Gender</th>
+      <th class="w-20">Class</th>
+    </tr>
+    <tr *ngFor="let character of characters">
+      <td class="p-10 w-10">{{ character.id }}</td>
+      <td class="p-10 w-20">{{ character.name }}</td>
+      <td class="p-10 w-20">{{ character.gender }}</td>
+      <td class="p-10 w-20">{{ character.class }}</td>
+    </tr>
+  </table>
+  <div *ngIf="characters.length === 0" class="empty-message">
+    No characters available.
+  </div>
+</div>

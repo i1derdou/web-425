@@ -76,37 +76,9 @@
                       </div>
                   </form>
               </div>
-              <!-- <div class="col-md-6 col-lg-7 character-align">
-                <table style="position: relative; top: 0px; margin-top: -50px;">
-                  <tr>
-                    <td colspan="4" style="text-align: left;">
-                      <h3>Character List</h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class="w-10">ID</th>
-                    <th class="w-20">Name</th>
-                    <th class="w-20">Gender</th>
-                    <th class="w-20">Class</th>
-                  </tr>
-                  <tr *ngFor="let character of characters">
-                    <td class="p-10 w-10">{{ character.id }}</td>
-                    <td class="p-10 w-20">{{ character.name }}</td>
-                    <td class="p-10 w-20">{{ character.gender }}</td>
-                    <td class="p-10 w-20">{{ character.class }}</td>
-                  </tr>
-                </table>
-              </div> -->
           </div>
           <div class="row">
-            <div class="col-md-12 col-lg-12">
-              <h3>Created Guilds</h3>
-              <ul>
-                <li *ngFor="let guild of createdGuilds">
-                  <strong>{{ guild.guildName }}</strong>: {{ guild.description }} ({{ guild.type }}) - Notification via {{ guild.notificationPreference }}
-                </li>
-              </ul>
-            </div>
+            <app-guild-list [guilds]="createdGuilds"></app-guild-list>
           </div>
       </div>
   </section>

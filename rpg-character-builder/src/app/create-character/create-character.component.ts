@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CharacterListComponent } from '../character-list/character-list.component';
 
 interface Character {
   id: number;
@@ -15,7 +16,8 @@ interface Character {
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    CharacterListComponent
   ],
   templateUrl: './create-character.component.html',
   styleUrls: ['./create-character.component.css']

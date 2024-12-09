@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-//import { FormsModule } from '@angular/forms';
+import { GuildListComponent } from '../guild-list/guild-list.component';
 
 interface Guild {
   guildName: string;
@@ -14,7 +14,7 @@ interface Guild {
 @Component({
   selector: 'app-create-guild',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, GuildListComponent],
   templateUrl: './create-guild.component.html',
   styleUrls: ['./create-guild.component.css']
 })

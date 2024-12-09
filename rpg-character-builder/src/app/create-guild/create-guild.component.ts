@@ -1,23 +1,41 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+//import { FormsModule } from '@angular/forms';
+
+interface Guild {
+  guildName: string;
+  description: string;
+  type: string;
+  notificationPreference: string;
+}
 
 @Component({
   selector: 'app-create-guild',
   standalone: true,
-  imports: [],
-  template: `
-    <div class="row pattern">
-      <section class="features" id="features">
-        <div class="container">
-          <div class="row">
-            <h2>Create Your Guild</h2>
-            <p class="section-description"></p>
-          </div>
-        </div>
-      </section>
-    </div>
-  `,
-  styles: ``
+  imports: [ReactiveFormsModule, CommonModule],
+  templateUrl: './create-guild.component.html',
+  styleUrls: ['./create-guild.component.css']
 })
 export class CreateGuildComponent {
+  guildForm: FormGroup;
+  createdGuilds: Guild[] = [];
 
+  constructor(private fb: FormBuilder) {
+    this.guildForm = this.fb.group({
+      guildName: ['', Validators.required],
+      description: ['', Validators.required],
+      type: ['', Validators.required],
+      notificationPreference: ['', Validators.required],
+      acceptTerms: [false, Validators.requiredTrue]
+    });
+  }
+
+  onSubmit() {
+    if (this.guildForm.valid) {
+      this.createdGuilds.push(this.guildForm.value);
+      this.guildForm.reset();
+    }
+  }
 }

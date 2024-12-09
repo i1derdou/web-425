@@ -1,0 +1,113 @@
+<div class="row pattern">
+  <section class="contact" id="contact">
+      <div class="container">
+          <div class="row">
+              <h2>Create a Guild</h2>
+              <p class="section-description">
+              </p>
+          </div>
+          <div class="row">
+              <div class="col-md-12 col-lg-12">
+                  <form [formGroup]="guildForm" (ngSubmit)="onSubmit()" novalidate>
+                      <div class="row">
+                          <div class="col-sm-4 label-container">
+                            <label for="guildName">Guild Name:</label>
+                          </div>
+                          <div class="col-sm-8">
+                            <input id="guildName" formControlName="guildName" type="text" required />
+                            <div *ngIf="guildForm.get('guildName')?.invalid && guildForm.get('guildName')?.touched">
+                              Guild Name is required.
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-4 label-container">
+                            <label for="description">Description:</label>
+                          </div>
+                          <div class="col-sm-8">
+                            <textarea id="description" formControlName="description" required></textarea>
+                            <div *ngIf="guildForm.get('description')?.invalid && guildForm.get('description')?.touched">
+                              Description is required.
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-4 label-container">
+                            <label for="type">Type:</label>
+                          </div>
+                          <div class="col-sm-8">
+                            <select id="type" formControlName="type" required>
+                              <option value="">Select Type</option>
+                              <option value="Competitive">Competitive</option>
+                              <option value="Casual">Casual</option>
+                              <option value="Social">Social</option>
+                              <option value="Educational">Educational</option>
+                            </select>
+                            <div *ngIf="guildForm.get('type')?.invalid && guildForm.get('type')?.touched">
+                              Type is required.
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4 label-container">
+                          <label>Notification Preference:</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="radio" formControlName="notificationPreference" value="Email" /> Email
+                          <input type="radio" formControlName="notificationPreference" value="SMS" /> SMS
+                          <input type="radio" formControlName="notificationPreference" value="In-App" /> In-App
+                          <div *ngIf="guildForm.get('acceptTerms')?.invalid && guildForm.get('acceptTerms')?.touched">
+                            You must accept the terms.
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12 label-container">
+                        I accept the terms <input type="checkbox" formControlName="acceptTerms" required>
+                        <div *ngIf="guildForm.get('acceptTerms')?.invalid && guildForm.get('acceptTerms')?.touched">
+                          You must accept the terms.
+                        </div>
+                      </div>
+                  </div>
+                      <div class="row">
+                          <div class="col-sm-12">
+                              <button type="submit" class="btn" [disabled]="guildForm.invalid">Create Guild</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <!-- <div class="col-md-6 col-lg-7 character-align">
+                <table style="position: relative; top: 0px; margin-top: -50px;">
+                  <tr>
+                    <td colspan="4" style="text-align: left;">
+                      <h3>Character List</h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="w-10">ID</th>
+                    <th class="w-20">Name</th>
+                    <th class="w-20">Gender</th>
+                    <th class="w-20">Class</th>
+                  </tr>
+                  <tr *ngFor="let character of characters">
+                    <td class="p-10 w-10">{{ character.id }}</td>
+                    <td class="p-10 w-20">{{ character.name }}</td>
+                    <td class="p-10 w-20">{{ character.gender }}</td>
+                    <td class="p-10 w-20">{{ character.class }}</td>
+                  </tr>
+                </table>
+              </div> -->
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12">
+              <h3>Created Guilds</h3>
+              <ul>
+                <li *ngFor="let guild of createdGuilds">
+                  <strong>{{ guild.guildName }}</strong>: {{ guild.description }} ({{ guild.type }}) - Notification via {{ guild.notificationPreference }}
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+  </section>
+</div>

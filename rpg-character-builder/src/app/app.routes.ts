@@ -30,17 +30,17 @@ export const routes: Routes = [
   {
     path: 'create-character', // Route to create a new character
     component: CreateCharacterComponent, // Renders the CreateCharacterComponent
-    canActivate: [AuthGuard] // Protected by AuthGuard; requires authentication
+    //canActivate: [AuthGuard] // Protected by AuthGuard; requires authentication
   },
   {
     path: 'create-guild', // Route to create a new guild
     component: CreateGuildComponent, // Renders the CreateGuildComponent
-    canActivate: [AuthGuard] // Protected by AuthGuard; requires authentication
+    //canActivate: [AuthGuard] // Protected by AuthGuard; requires authentication
   },
   {
     path: 'character-faction', // Route to manage character factions
     component: CharacterFactionComponent, // Renders the CharacterFactionComponent
-    canActivate: [AuthGuard] // Protected by AuthGuard; requires authentication
+    //canActivate: [AuthGuard] // Protected by AuthGuard; requires authentication
   },
   {
     path: 'signin', // Route for the sign-in page

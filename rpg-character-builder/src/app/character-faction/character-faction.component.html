@@ -1,0 +1,22 @@
+<div class="col-md-12 col-lg-12 character-align" id="character-faction-container" *ngIf="characterFactions.length > 0; else noFactions">
+  <h3>Character Faction</h3>
+  <table style="margin-top: 50px;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let faction of characterFactions">
+        <td>{{ faction.name }}</td>
+        <td>{{ faction.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noFactions>
+  <div id="character-faction-no-data">
+    <p>{{ errorMessage }}</p>
+  </div>
+</ng-template>

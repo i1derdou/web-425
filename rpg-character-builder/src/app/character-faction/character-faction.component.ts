@@ -1,23 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-character-faction',
   standalone: true,
-  imports: [],
-  template: `
-    <div class="row pattern">
-      <section class="features" id="features">
-        <div class="container">
-          <div class="row">
-            <h2>Character Factions</h2>
-            <p class="section-description"></p>
-          </div>
-        </div>
-      </section>
-    </div>
-  `,
-  styles: ``
+  imports: [CommonModule],
+  templateUrl: './character-faction.component.html',
+  styleUrls: ['./character-faction.component.css']
 })
-export class CharacterFactionComponent {
+export class CharacterFactionComponent implements OnInit {
+  characterFactions: any[] = [];
+  errorMessage: string = '';
 
+  constructor() {}
+
+  ngOnInit(): void {
+    this.getCharacterFactions();
+  }
+
+  getCharacterFactions(): void {
+    fetch('http://localhost:3000/api/character-factions')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        this.characterFactions = data;
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        this.errorMessage = 'Error fetching character factions. Please try again later.';
+      });
+  }
 }
